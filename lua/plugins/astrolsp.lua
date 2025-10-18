@@ -1,4 +1,3 @@
-
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -16,17 +15,13 @@ return {
           "cpp",
           "cc",
         },
-        ignore_filetypes = {
-        },
+        ignore_filetypes = {},
       },
-      disabled = { 
-      },
-      timeout_ms = 1000, 
+      disabled = {},
+      timeout_ms = 1000,
     },
+
     servers = {
-    },
-    ---@diagnostic disable: missing-fields
-    config = {
       clangd = {
         cmd = {
           "clangd",
@@ -38,8 +33,10 @@ return {
         filetypes = { "cpp" },
         root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
       },
-      handlers = {
-      },
+    },
+
+    config = {
+      handlers = {},
       autocmds = {
         lsp_codelens_refresh = {
           cond = "textDocument/codeLens",
@@ -69,6 +66,7 @@ return {
         },
       },
       on_attach = function(client, bufnr)
+        -- Custom attach logic here
       end,
     },
   },

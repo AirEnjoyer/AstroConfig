@@ -97,4 +97,3 @@ require("oil").setup {
     rm = function(path) return false end,
   },
 }
-vim.cmd "colorscheme = ashen"
