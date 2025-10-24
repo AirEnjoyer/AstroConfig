@@ -23,9 +23,24 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+  name = "wl-clipboard",
+  copy = {
+    ["+"] = "wl-copy",
+    ["*"] = "wl-copy",
+  },
+  paste = {
+    ["+"] = "wl-paste",
+    ["*"] = "wl-paste",
+  },
+  cache_enabled = 0,
+}
+
 require "lazy_setup"
 require "polish"
 vim.cmd "colorscheme ashen"
+
 require("oil").setup {
   default_file_explorer = true,
   columns = {
